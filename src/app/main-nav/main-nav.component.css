@@ -19,11 +19,3 @@
 img {
   width: 6.25rem;
 }
-
-.container {
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-}
