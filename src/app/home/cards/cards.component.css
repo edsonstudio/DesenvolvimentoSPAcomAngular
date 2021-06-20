@@ -1,10 +1,59 @@
 .example-card {
     max-width: 25rem;
     margin: 1.5rem;
-    width: 21rem;
+    width: 12.5rem;
+    height: 15.7rem;
+    perspective: 1000px;
   }
   
 .example-header-image {
   background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
   background-size: cover;
 }
+
+/* This container is needed to position the front and back side */
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+/* Do an horizontal flip when you move the mouse over the flip box container */
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+/* Position the front and back side */
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
+}
+
+/* Style the front side (fallback if image is missing) */
+.flip-card-front {
+  padding: 15px 10px 5px 10px; /* superior | direita | inferior | esquerda */
+  color: black;
+}
+
+/* Style the back side */
+.flip-card-back {
+  background-color: var(--primary-color);
+  padding: 15px 10px 0px 10px; /* superior | direita | inferior | esquerda */
+  color: white;
+  transform: rotateY(180deg);
+  display:flex;
+  flex-direction: column;
+  align-items: center;  
+}
+
+.contenido{
+  width:10%;
+  float:left;
+  margin: 0 12px;
+  align-items: center;
+}
+
+.material-icons.gray900 { color: #212121; }
