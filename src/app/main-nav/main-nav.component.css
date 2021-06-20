@@ -19,3 +19,12 @@
 img {
   width: 6.25rem;
 }
+
+.top-nav {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* .notifications {
+
+} */
