@@ -3,10 +3,11 @@
     [mode]="(isHandset$ | async) ? 'over' : 'side'" [opened]="(isHandset$ | async) === false">
     <mat-toolbar>Menu</mat-toolbar>
     <mat-nav-list>
-      <a mat-list-item href="#">Products</a>
-      <a mat-list-item href="#">About</a>
-      <a mat-list-item href="#">Contact</a>
-      <a mat-list-item href="#">Features</a>
+      <a mat-list-item [routerLink]="['/home']">Home</a>
+      <a mat-list-item [routerLink]="['/products']">Products</a>
+      <a mat-list-item [routerLink]="['/sobre']">About</a>
+      <a mat-list-item [routerLink]="['/contato']">Contact</a>
+      <a mat-list-item [routerLink]="['/features']">Features</a>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
