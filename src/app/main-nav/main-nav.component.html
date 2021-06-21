@@ -7,7 +7,7 @@
       <a mat-list-item [routerLink]="['/products']">Products</a>
       <a mat-list-item [routerLink]="['/sobre']">About</a>
       <a mat-list-item [routerLink]="['/contato']">Contact</a>
-      <a mat-list-item [routerLink]="['/features']">Features</a>
+      <a mat-list-item [routerLink]="['/feature-data-binding']">Features</a>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
@@ -17,7 +17,7 @@
           *ngIf="isHandset$ | async">
           <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
         </button>
-        <img src="/assets/logo13-full.png" alt="logo13-full-white">
+        <a [routerLink]="['/home']"><img src="/assets/logo13-full.png" alt="logo eddy / home"></a>
         <!-- <div class="notifications">
           <div class="contenido">
             <span class="material-icons gray900">mark_chat_unread</span>
