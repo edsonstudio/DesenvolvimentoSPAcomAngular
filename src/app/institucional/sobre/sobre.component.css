@@ -1,59 +1,62 @@
 body {
     font-family: Arial, Helvetica, sans-serif;
     margin: 0;
-  }
-  
-  html {
+}
+
+html {
     box-sizing: border-box;
-  }
-  
-  *, *:before, *:after {
+}
+
+*,
+*:before,
+*:after {
     box-sizing: inherit;
-  }
-  
-  .column {
+}
+
+.column {
     float: left;
     margin-bottom: 16px;
     padding: 0 8px;
     max-width: 25rem;
     width: 17.5rem;
-  }
+}
 
-  .row {
+.row {
     width: 100%;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
-  }
-  
-  .card {
+}
+
+.card {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     margin: 8px;
-  }
-  
-  .about-section {
+}
+
+.about-section {
     padding: 50px;
     text-align: center;
     background-color: var(--secondary-color);
     color: white;
-  }
-  
-  .container {
+}
+
+.container {
     padding: 0 16px;
-  }
-  
-  .container::after, .row::after {
+}
+
+.container::after,
+.row::after {
     content: "";
     clear: both;
     display: table;
-  }
-  
-  .title {
+}
+
+.title {
     color: var(--primary-color);
-  }
-  
-  .button {
+}
+
+.button {
     border: none;
     outline: 0;
     display: inline-block;
@@ -62,15 +65,15 @@ body {
     background-color: #000;
     text-align: center;
     cursor: pointer;
-  }
-  
-  .button:hover {
+}
+
+.button:hover {
     background-color: var(--primary-color);
-  }
-  
-  @media screen and (max-width: 650px) {
+}
+
+@media screen and (max-width: 650px) {
     .column {
-      width: 100%;
-      display: block;
+        width: 100%;
+        display: block;
     }
-  }
+}
