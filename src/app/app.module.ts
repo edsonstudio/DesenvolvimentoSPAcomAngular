@@ -1,5 +1,8 @@
+import { rootRouterConfig } from './app.routes';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { RouterModule } from '@angular/router';
+import { APP_BASE_HREF } from '@angular/common';
 
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -14,6 +17,8 @@ import { CardsComponent } from './home/cards/cards.component';
 import { MatCardModule } from '@angular/material/card';
 import { HomeComponent } from './home/home.component';
 import { FooterComponent } from './footer/footer.component';
+import { SobreComponent } from './institucional/sobre/sobre.component';
+import { ContatoComponent } from './institucional/contato/contato.component';
 
 @NgModule({
   declarations: [
@@ -21,10 +26,13 @@ import { FooterComponent } from './footer/footer.component';
     MainNavComponent,
     CardsComponent,
     HomeComponent,
-    FooterComponent
+    FooterComponent,
+    SobreComponent,
+    ContatoComponent
   ],
   imports: [
     BrowserModule,
+    [RouterModule.forRoot(rootRouterConfig, { useHash: false })],
     BrowserAnimationsModule,
     LayoutModule,
     MatToolbarModule,
@@ -34,7 +42,9 @@ import { FooterComponent } from './footer/footer.component';
     MatListModule,
     MatCardModule
   ],
-  providers: [],
+  providers: [
+    { provide: APP_BASE_HREF, useValue: '/' }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
