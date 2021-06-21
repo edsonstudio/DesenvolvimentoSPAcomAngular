@@ -1,10 +1,10 @@
 .example-card {
-    max-width: 25rem;
-    margin: 1.5rem;
-    width: 12.5rem;
-    height: 15.7rem;
-    perspective: 1000px;
-    display:flex;
+  max-width: 25rem;
+  margin: 1.5rem;
+  width: 12.5rem;
+  height: 15.7rem;
+  perspective: 1000px;
+  display:flex;
   flex-direction: column;
   align-items: center; 
   }
