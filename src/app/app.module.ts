@@ -24,6 +24,10 @@ import { FormsModule } from '@angular/forms';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {MatRadioModule} from '@angular/material/radio';
 import { ProdutoService } from './produtos/produtos.service';
+import { ListaProdutoComponent } from './produtos/lista-produto/lista-produto.component';
+import { CardProductComponent } from './produtos/card-product/card-product.component';
+import { HttpClientModule } from '@angular/common/http';
+import {MatGridListModule} from '@angular/material/grid-list';
 
 @NgModule({
   declarations: [
@@ -34,10 +38,13 @@ import { ProdutoService } from './produtos/produtos.service';
     FooterComponent,
     SobreComponent,
     ContatoComponent,
-    DataBindingComponent
+    DataBindingComponent,
+    ListaProdutoComponent,
+    CardProductComponent
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     [RouterModule.forRoot(rootRouterConfig, { useHash: false })],
     BrowserAnimationsModule,
     LayoutModule,
@@ -49,7 +56,8 @@ import { ProdutoService } from './produtos/produtos.service';
     MatCardModule,
     FormsModule,
     MatProgressSpinnerModule,
-    MatRadioModule
+    MatRadioModule,
+    MatGridListModule
   ],
   providers: [
     ProdutoService,
