@@ -5,7 +5,7 @@ import { Injectable } from "@angular/core";
 
 @Injectable()
 export class ProdutoService{
-    protected UrlServiceV1: string = "http://localhost:3000/";
+    protected UrlServiceV1: string = "https://json-server-angular.herokuapp.com/";
 
     constructor(private http: HttpClient) {}
 
