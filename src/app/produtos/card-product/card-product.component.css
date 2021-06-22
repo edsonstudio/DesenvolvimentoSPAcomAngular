@@ -19,7 +19,7 @@
 }
 
 .avatar-header-image {
-	background-image: url('assets/icon-cart01.png');
+	background-image: url("~src/assets/icon-cart01.png");
 	background-size: cover;
 	cursor: pointer;
 }
