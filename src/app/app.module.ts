@@ -23,6 +23,7 @@ import { DataBindingComponent } from './demos/data-binding/data-binding.componen
 import { FormsModule } from '@angular/forms';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {MatRadioModule} from '@angular/material/radio';
+import { ProdutoService } from './produtos/produtos.service';
 
 @NgModule({
   declarations: [
@@ -51,6 +52,7 @@ import {MatRadioModule} from '@angular/material/radio';
     MatRadioModule
   ],
   providers: [
+    ProdutoService,
     { provide: APP_BASE_HREF, useValue: '/' }
   ],
   bootstrap: [AppComponent]
