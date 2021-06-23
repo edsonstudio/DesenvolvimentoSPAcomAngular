@@ -10,7 +10,7 @@
 			<a mat-list-item [routerLink]="['/feature-data-binding']">Features</a>
 		</mat-nav-list>
 	</mat-sidenav>
-	<mat-sidenav-content>
+	<mat-sidenav-content [ngSwitch]="isDarkTheme">
 		<div *ngIf="loaderService.isLoading | async" class="loader-container">
 			<mat-progress-bar mode="indeterminate"></mat-progress-bar>
 		</div>
@@ -22,8 +22,9 @@
 				</button>
 				<a [routerLink]="['/home']"><img src="assets/logo13-full-white.png" alt="logo eddy / home"></a>
 				<span style="flex:auto"></span>
-				<mat-slide-toggle [(ngModel)]="isDarkTheme" labelPosition="before" (change)="storeThemeSelection()">
-					<mat-icon>dark_mode</mat-icon>
+				<mat-slide-toggle [ngSwitch]="isDarkTheme" [(ngModel)]="isDarkTheme" labelPosition="before" (change)="storeThemeSelection()">
+					<mat-icon *ngSwitchCase="true">light_mode</mat-icon>
+					<mat-icon *ngSwitchCase="false">dark_mode</mat-icon>
 				</mat-slide-toggle>
 				<div class="notifications">
 					<!-- <div class="conteudo">
@@ -50,6 +51,11 @@
 		<!-- Add Content Here -->
 		<router-outlet></router-outlet>
 		<!-- Add Content Here -->
-		<app-footer></app-footer>
+		<div *ngSwitchCase="true" class="eddy-footer-dark">
+			<app-footer></app-footer>
+		</div>
+		<div *ngSwitchCase="false" class="eddy-footer-light">
+			<app-footer></app-footer>
+		</div>
 	</mat-sidenav-content>
 </mat-sidenav-container>

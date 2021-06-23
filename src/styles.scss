@@ -21,6 +21,7 @@ $eddy-theme-dark: mat-dark-theme($eddy-primary-dark, $eddy-accent-dark, $eddy-wa
 
 :root {
     --primary-color: #F57C00;
+    --primary-color-dark: #272727;
     --secondary-color: #a1a1a1;
     --background-color: #303030;
 }
@@ -34,4 +35,36 @@ body {
     margin: 0;
     padding: 0;
     font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.eddy-footer-dark {
+    background: var(--primary-color-dark);
+
+    .eddy-icon ul li {
+        background: var(--secondary-color);
+    }
+    
+    .eddy-icon ul li a {
+        color: var(--primary-color-dark);
+    }
+
+    .eddy-icon ul li:hover {
+        background: var(--primary-color);
+    }
+}
+
+.eddy-footer-light {
+    background: var(--primary-color);
+
+    .eddy-icon ul li {
+        background: #FFF;
+    }
+    
+    .eddy-icon ul li a {
+        color: var(--primary-color);
+    }
+
+    .eddy-icon ul li:hover {
+        background: var(--primary-color-dark);
+    }
 }

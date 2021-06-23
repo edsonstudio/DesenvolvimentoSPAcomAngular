@@ -4,7 +4,9 @@
 			<mat-card-header>
 				<span class="material-icons gray900">touch_app</span>
 				<div mat-card-avatar class="avatar-header-image"></div>
-				<mat-card-title>{{ produto.valor | currency:'BRL':symbol:'1.2-2':'pt' }}</mat-card-title>
+				<mat-card-title *ngIf="!produto.promocao">{{ produto.valor | currency:'BRL':symbol:'1.2-2':'pt' }}</mat-card-title>
+				<mat-card-subtitle *ngIf="produto.promocao">De: <del>{{ produto.valor | currency:'BRL':symbol:'1.2-2':'pt' }}</del></mat-card-subtitle>
+				<mat-card-title *ngIf="produto.promocao">Por: {{ produto.valorPromo | currency:'BRL':symbol:'1.2-2':'pt' }}</mat-card-title>
 				<mat-card-subtitle>{{ produto.nome | titlecase }}</mat-card-subtitle>
 			</mat-card-header>
 			<div class="flip-card-inner">
@@ -15,25 +17,21 @@
 					<mat-card-content>
 						<p>{{ produto.descricao }}</p>
 						<div class="conteudo">
-							<!-- <span class="material-icons gray900">thumb_up_off_alt</span> -->
 							<button mat-icon-button>
 								<mat-icon>thumb_up_off_alt</mat-icon>
 							</button>
 						</div>
 						<div class="conteudo">
-							<!-- <span class="material-icons gray900">share</span> -->
 							<button mat-icon-button>
 								<mat-icon>share</mat-icon>
 							</button>
 						</div>
 						<div class="conteudo">
-							<!-- <span class="material-icons gray900">favorite_border</span> -->
 							<button mat-icon-button>
 								<mat-icon>favorite_border</mat-icon>
 							</button>
 						</div>
 						<div class="conteudo">
-							<!-- <a><span class="material-icons gray900">zoom_in</span></a> -->
 							<button mat-icon-button [routerLink]="['/produto-detalhe', produto.id]">
 								<mat-icon>zoom_in</mat-icon>
 							</button>

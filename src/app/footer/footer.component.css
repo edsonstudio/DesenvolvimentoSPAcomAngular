@@ -3,7 +3,6 @@
     bottom: 0;
     left: 0;
     width: 100%;
-    background: #272727;
     padding: 20px 0px;
 }
 
@@ -25,22 +24,16 @@
     height: 50px;
     margin: 0px 10px;
     border-radius: 100%;
-    background: var(--secondary-color);
 }
 
 .eddy-icon ul li a {
     text-decoration: none;
-    color: #272727;
     font-size: 25px;
     display: block;
 }
 
 .eddy-icon ul li a i {
     line-height: 50px;
-}
-
-.eddy-icon ul li:hover {
-    background: var(--primary-color);
 }
 
 .eddy-icon ul li a:hover>i {
