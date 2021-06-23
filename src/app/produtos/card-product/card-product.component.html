@@ -4,8 +4,8 @@
 			<mat-card-header>
 				<span class="material-icons gray900">touch_app</span>
 				<div mat-card-avatar class="avatar-header-image"></div>
-				<mat-card-title>R$ {{ produto.valor }}</mat-card-title>
-				<mat-card-subtitle>{{ produto.nome }}</mat-card-subtitle>
+				<mat-card-title>{{ produto.valor | currency:'BRL':symbol:'1.2-2':'pt' }}</mat-card-title>
+				<mat-card-subtitle>{{ produto.nome | titlecase }}</mat-card-subtitle>
 			</mat-card-header>
 			<div class="flip-card-inner">
 				<div class="flip-card-front">
