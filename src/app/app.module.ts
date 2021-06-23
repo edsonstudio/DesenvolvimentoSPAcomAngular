@@ -1,7 +1,7 @@
+import { InterceptorService } from './loader/interceptor.service';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { APP_BASE_HREF } from '@angular/common';
-
+import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MainNavComponent } from './main-nav/main-nav.component';
@@ -24,7 +24,7 @@ import { MatRadioModule} from '@angular/material/radio';
 import { ProdutoService } from './produtos/produtos.service';
 import { ListaProdutoComponent } from './produtos/lista-produto/lista-produto.component';
 import { CardProductComponent } from './produtos/card-product/card-product.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { MatGridListModule} from '@angular/material/grid-list';
 import { AppRoutingModule } from './app-routing.module';
 
@@ -55,11 +55,13 @@ import { AppRoutingModule } from './app-routing.module';
     MatCardModule,
     FormsModule,
     MatProgressSpinnerModule,
+    MatProgressBarModule,
     MatRadioModule,
     MatGridListModule
   ],
   providers: [
     ProdutoService,
+    { provide: HTTP_INTERCEPTORS, useClass: InterceptorService, multi: true }
     // { provide: APP_BASE_HREF, useValue: '/' }
   ],
   bootstrap: [AppComponent]
