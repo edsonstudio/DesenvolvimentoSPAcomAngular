@@ -27,6 +27,8 @@ import { CardProductComponent } from './produtos/card-product/card-product.compo
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { MatGridListModule} from '@angular/material/grid-list';
 import { AppRoutingModule } from './app-routing.module';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+
 
 @NgModule({
   declarations: [
@@ -57,7 +59,8 @@ import { AppRoutingModule } from './app-routing.module';
     MatProgressSpinnerModule,
     MatProgressBarModule,
     MatRadioModule,
-    MatGridListModule
+    MatGridListModule,
+    MatSlideToggleModule
   ],
   providers: [
     ProdutoService,

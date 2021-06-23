@@ -50,14 +50,16 @@
 /* Style the back side */
 
 .flip-card-back {
-	background-color: var(--primary-color);
-	padding: 15px 10px 0px 10px;
-	/* superior | direita | inferior | esquerda */
-	color: white;
 	transform: rotateY(180deg);
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+}
+
+.mat-app-background {
+	/* superior | direita | inferior | esquerda */
+	background-color: var(--primary-color);
+	padding: 15px 10px 5px 10px;
 }
 
 .conteudo {

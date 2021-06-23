@@ -1,12 +1,27 @@
 @import '~@angular/material/theming';
 @include mat-core();
-$my-app-primary: mat-palette($mat-gray, 900, A400, A200);
-$my-app-accent: mat-palette($mat-gray, A200, A100, A400);
-$my-app-theme: mat-dark-theme($my-app-primary, $my-app-accent);
-@include angular-material-theme($my-app-theme);
+
+//for light theme
+$eddy-primary: mat-palette($mat-orange, A400, A200, A100);
+$eddy-accent: mat-palette($mat-yellow);
+$eddy-warn: mat-palette($mat-red);
+
+$eddy-theme: mat-light-theme($eddy-primary, $eddy-accent, $eddy-warn);
+@include angular-material-theme($eddy-theme);
+
+//for dark theme
+$eddy-primary-dark: mat-palette($mat-gray, 900, A400, A200);
+$eddy-accent-dark: mat-palette($mat-gray, A200, A100, A400);
+$eddy-warn-dark: mat-palette($mat-orange);
+
+$eddy-theme-dark: mat-dark-theme($eddy-primary-dark, $eddy-accent-dark, $eddy-warn-dark);
+.dark-theme-mode {
+    @include angular-material-theme($eddy-theme-dark);
+}
+
 :root {
     --primary-color: #F57C00;
-    --secondary-color: #757575;
+    --secondary-color: #a1a1a1;
     --background-color: #303030;
 }
 
@@ -19,4 +34,11 @@ body {
     margin: 0;
     padding: 0;
     font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.logo-menu-image {
+    background-color: antiquewhite;
+	// background-image: url("~src/assets/logo13-full-sombra.png");
+	// background-size: cover;
+	cursor: pointer;
 }

@@ -1,4 +1,4 @@
-<mat-sidenav-container class="sidenav-container">
+<mat-sidenav-container class="sidenav-container mat-app-background" [ngClass]="{'dark-theme-mode': isDarkTheme}">
 	<mat-sidenav #drawer class="sidenav" fixedInViewport [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
 		[mode]="(isHandset$ | async) ? 'over' : 'side'" [opened]="(isHandset$ | async) === false">
 		<mat-toolbar>Menu</mat-toolbar>
@@ -20,23 +20,33 @@
 					*ngIf="isHandset$ | async">
 					<mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
 				</button>
-				<a [routerLink]="['/home']"><img src="assets/logo13-full.png" alt="logo eddy / home"></a>
-				<!-- <div class="notifications">
-          <div class="conteudo">
-            <span class="material-icons gray900">mark_chat_unread</span>
-          </div>
-          <div class="conteudo">
-            <span class="material-icons gray900">mark_email_unread</span>
-          </div>
-          <div class="conteudo">
-            <span class="material-icons gray900">notifications</span>
-          </div>
-        </div> -->
+				<a [routerLink]="['/home']"><img src="assets/logo13-full-white.png" alt="logo eddy / home"></a>
+				<span style="flex:auto"></span>
+				<mat-slide-toggle [(ngModel)]="isDarkTheme" labelPosition="before" (change)="storeThemeSelection()">
+					<mat-icon>dark_mode</mat-icon>
+				</mat-slide-toggle>
+				<div class="notifications">
+					<!-- <div class="conteudo">
+						<button mat-icon-button>
+							<mat-icon>mark_chat_unread</mat-icon>
+						</button>
+					</div>
+					<div class="conteudo">
+						<button mat-icon-button>
+							<mat-icon>mark_email_unread</mat-icon>
+						</button>
+					</div> -->
+					<div class="conteudo">
+						<button mat-icon-button>
+							<mat-icon>notifications</mat-icon>
+						</button>
+					</div>
+				</div>
 			</mat-toolbar>
 		</div>
 		<div *ngIf="loaderService.isLoading | async" class="loader-container-spinner">
 			<mat-spinner></mat-spinner>
-		  </div>
+		</div>
 		<!-- Add Content Here -->
 		<router-outlet></router-outlet>
 		<!-- Add Content Here -->
