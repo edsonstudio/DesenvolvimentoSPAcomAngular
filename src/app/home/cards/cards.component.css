@@ -1,8 +1,8 @@
 .example-card {
-	max-width: 25rem;
+	max-width: 37.5rem;
 	margin: 1.25rem;
-	width: 12.5rem;
-	height: 15.7rem;
+	width: 37.5rem;
+	height: 28.75rem;
 	perspective: 1000px;
 	display: flex;
 	flex-direction: column;
@@ -10,7 +10,7 @@
 }
 
 .example-header-image {
-	background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+	background-image: url('~src/assets/logo13-icon.png');
 	background-size: cover;
 }
 
@@ -62,13 +62,17 @@
 	padding: 15px 10px 5px 10px;
 }
 
-.conteudo {
-	width: 10%;
-	float: left;
+.conteudo span{
+	width: 100%;
 	margin: 0 12px;
+	display: flex;
+	flex-direction: column;
 	align-items: center;
 }
 
-.material-icons.gray900 {
-	color: #212121;
+@media(max-width:420px) {
+	.example-card {
+		max-width: 280px;
+		height: 268px;
+	}
 }
