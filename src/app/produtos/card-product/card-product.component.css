@@ -60,6 +60,10 @@
 /* Style the back side */
 
 .flip-card-back {
+	background-color: #FFF;
+	padding: 12px;
+	border-radius: 5px;
+	color: #000;
 	transform: rotateY(180deg);
 	display: flex;
 	flex-direction: column;
