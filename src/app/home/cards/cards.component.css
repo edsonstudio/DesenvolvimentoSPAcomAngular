@@ -10,8 +10,11 @@
 }
 
 .example-header-image {
-	background-image: url('~src/assets/logo13-icon.png');
-	background-size: cover;
+	-webkit-mask: url('~src/assets/Logo_Eddy_SVG-conv.svg') no-repeat center;
+	mask: url('~src/assets/Logo_Eddy_SVG-conv.svg') no-repeat center;
+	mask-size: 1.9375rem ;
+	background-color: var(--primary-color);
+
 }
 
 /* This container is needed to position the front and back side */

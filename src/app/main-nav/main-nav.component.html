@@ -20,7 +20,7 @@
 					*ngIf="isHandset$ | async">
 					<mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
 				</button>
-				<a [routerLink]="['/home']"><img src="assets/logo13-full-white.png" alt="logo eddy / home"></a>
+				<div mat-card-avatar class="logo-header"></div>
 				<span style="flex:auto"></span>
 				<mat-slide-toggle [ngSwitch]="isDarkTheme" [(ngModel)]="isDarkTheme" labelPosition="before" (change)="storeThemeSelection()">
 					<mat-icon *ngSwitchCase="true">light_mode</mat-icon>

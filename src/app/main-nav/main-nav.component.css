@@ -66,6 +66,17 @@ img {
 	z-index: 99;
 }
 
+.logo-header {
+	-webkit-mask: url('~src/assets/logo13-full-SVG.svg') no-repeat center;
+	mask: url('~src/assets/logo13-full-SVG.svg') no-repeat center;
+	mask-size: 100px ;
+	background-color: #FFF;
+	position: relative;
+	width: 190px;
+	left: -35px;
+	z-index: -1;
+}
+
 @media(max-width:380px) {
 	.loader-container-spinner {
 		top: 45%;
